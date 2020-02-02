@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+ bool isPrime(long long int x)
+ {
+     for (long long int i = 2; i < x/2; i++)
+     {
+         if (x % i == 0)
+         {
+             return false;
+         }
+         
+     }
+     return true;
+ }
+ 
+int main()
+{
+    long long int num, ans = 0;
+    cin >> num;
+    for (long long int i = 2; i < num/2; i++)
+    {
+        if(num % i == 0)
+        {
+            if(isPrime(i))
+            {
+                ans = i;
+            }
+        }
+    }
+    cout << ans;
+    return 0;
+}
