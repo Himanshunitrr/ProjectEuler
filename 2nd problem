@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+ 
+ 
+using namespace std;
+int main()
+{
+    long int t3 = 0;
+    int t1 = 0,t2 = 1;
+    long int sum = 0;
+
+    while(t3 < 4000000)
+    {
+        t3 = t1 + t2;
+        t1 = t2;
+        t2 = t3;
+        if(t3 % 2 == 0)
+            sum = sum + t3;
+    }
+    cout << sum;
+    return 0;
+}
