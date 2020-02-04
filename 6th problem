@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int num,sum1 = 0, sum = 0;
+    cin >> num;
+    for (int i = 1; i <= num; i++)
+    {
+        sum = sum + i*i;
+    }
+    
+    for (int i =1; i <= num; i++)
+    {
+        sum1 = sum1 + i;
+    }
+    sum1 = sum1 * sum1;
+    num = sum - sum1;
+    cout << num;
+}
