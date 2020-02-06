@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+	int mp = 1,arr[20][20];
+	for (int i = 0; i < 20; i++)
+	{
+		for (int j = 0; j < 20; j++)
+		{
+			cin >> arr[i][j];
+		}
+	}
+	for (int i = 0; i < 20; i++)
+	{
+		for (int j = 0; j < 17; j += 4)
+		{
+			mp = max(arr[i][j] * arr[i][j + 1] * arr[i][j+2] * arr[i][j+3], mp);
+		}
+	}
+		
+	for(int i = 0; i < 17; i++)
+	{
+		{
+			for (int j = 0; j < 17; j++)
+			{
+				mp = max(arr[i][j] * arr[i + 1][j + 1] * arr[i+2][j+2] * arr[i + 3][j +3], mp);
+			}
+			for (int j = 19; j > 2;j--)
+			{
+				mp = max(arr[i][j] * arr[i +1][j-1] * arr[i +2][j -2] * arr[i + 3][j -3], mp);
+			}
+		}
+	}
+	for (int i = 0; i < 17; i += 4)
+	{
+		for (int j = 0; j < 20; j++)
+		{
+			mp = max(arr[i][j] * arr[i+1][j] * arr[i +2][j] *arr[i + 3][j], mp);
+		}
+		
+	}
+	cout << mp;
+	return 0;
+}
